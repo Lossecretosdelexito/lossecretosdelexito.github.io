@@ -30,6 +30,6 @@ jobs:
 
     steps:
     - name: Deploy to production
-      uses: lossecretosdelexito/lossecretosdelexito.github.io
+      uses: lossecretosdelexito/lossecretosdelexito.github.io@main
       with:
         deploy-key: ${{ secrets.DEPLOY_KEY }}

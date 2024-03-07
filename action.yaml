@@ -25,11 +25,4 @@ jobs:
     - name: Run tests
       run: npm test
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-    - name: Deploy to production
-      uses: lossecretosdelexito/lossecretosdelexito.github.io@main
-      with:
-        deploy-key: ${{ secrets.DEPLOY_KEY }}
+  

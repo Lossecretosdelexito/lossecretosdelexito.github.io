@@ -1,0 +1,24 @@
+name: Install Dependencies
+
+on:
+  push:
+    branches:
+      - main  # Cambiar esto según la rama que quieras que active el flujo
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Install Node.js and npm
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install Dependencies
+      run: npm install
+
+    # Aquí puedes agregar más pasos según lo que necesites hacer con tus dependencias

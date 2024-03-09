@@ -5,7 +5,14 @@
   }
   body {
     background-image: src (fondo.png);
-    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #2D5D84;
+    font-family: Arial, sans-serif;
+    font-color:  #ffffff 
+
+   
   }
   .product-container {
     text-align: justify;

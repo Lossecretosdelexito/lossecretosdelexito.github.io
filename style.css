@@ -4,13 +4,8 @@
     box-sizing: border-box;
   }
   body {
-    background-image: url (fondo.png);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: #ffffff;
-    font-family: Arial, sans-serif;
-    font-color:  #ffffff;
+    background-image: src (fondo.png);
+    
   }
   .product-container {
     text-align: justify;

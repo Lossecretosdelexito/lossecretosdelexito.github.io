@@ -1,0 +1,30 @@
+name: Forward Port 8888
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ngrok:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install ngrok
+      run: |
+        curl -O https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+        unzip ngrok-stable-linux-amd64.zip
+
+    - name: Start Server
+      run: npm start  # O el comando que uses para iniciar tu servidor local
+
+    - name: Expose Localhost
+      run: ./ngrok http 8888  # Reemplaza "8888" con el puerto que estás utilizando en tu servidor local

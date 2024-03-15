@@ -1,4 +1,4 @@
-name: Install Dependencies
+name: Install Dependencies and Forward Port
 
 on:
   push:
@@ -6,14 +6,14 @@ on:
       - main
 
 jobs:
-  install:
+  setup:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Setup Node.js
+    - name: Setup Node.js and Install Dependencies
       uses: actions/setup-node@v2
       with:
         node-version: '14'
@@ -22,3 +22,6 @@ jobs:
       run: |
         npm install
         npm install --save-dev nodemon
+
+    - name: Forward Port 8888
+      run: ./ngrok http 8888

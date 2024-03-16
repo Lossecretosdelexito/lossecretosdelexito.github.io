@@ -24,8 +24,9 @@ jobs:
           npm install
           npm install --save-dev nodemon
 
+
       - name: Set execute permission for ngrok
-        run: chmod +x ngrok
+        run: chmod +x ./ngrok-v3/ngrok
 
       - name: Forward Port 8888
-        run: ./ngrok http 8888
+        run: ./ngrok-v3/ngrok http 8888

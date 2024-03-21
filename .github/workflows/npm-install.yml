@@ -2,7 +2,7 @@
 name: Install Dependencies and Forward Port
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 

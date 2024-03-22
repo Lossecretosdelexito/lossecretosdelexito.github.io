@@ -2,7 +2,7 @@
 name: Install Dependencies and Forward Port
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
@@ -24,9 +24,11 @@ jobs:
           npm install
           npm install --save-dev nodemon
 
-
       - name: Set execute permission for ngrok
-        run: chmod +x ./ngrok-v3/ngrok
+        run: chmod +x ngrok
 
-      - name: Forward Port 8888
-        run: ./ngrok-v3/ngrok http 8888
+      - name: Start server and Forward Port
+        run: |
+          npm start & 
+          sleep 10
+          ./ngrok http 8888

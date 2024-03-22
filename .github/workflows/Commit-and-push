@@ -1,0 +1,29 @@
+name: Commit and Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  commit_and_push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'Lossecretosdelexito'
+          git config --global user.email 'royalty.diplomacy@gmail.com'
+
+      - name: Add changes
+        run: git add .
+
+      - name: Commit changes
+        run: git commit -m "Agregado archivo ngrok-v3-stable-freebsd-amd64.tgz"
+
+
+      - name: Push changes
+        run: git push

@@ -22,7 +22,7 @@ jobs:
         run: git add .
 
       - name: Commit changes
-        run: git commit -m "Agregado archivo ngrok-v3-stable-freebsd-amd64.tgz"
+        run: git commit -m "Agregado archivo ngrok"
 
 
       - name: Push changes

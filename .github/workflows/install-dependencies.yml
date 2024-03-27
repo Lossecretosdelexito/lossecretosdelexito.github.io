@@ -26,7 +26,7 @@ jobs:
 
       - name: Extract ngrok
         run: |
-          tar -xvzf ngrok-v3-stable-freebsd-amd64.tgz
+          tar -xvzf ngrok.tgz
 
       - name: Set execute permission for ngrok
         run: chmod +x ngrok

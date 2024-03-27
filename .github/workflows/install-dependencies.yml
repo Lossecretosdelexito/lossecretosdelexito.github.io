@@ -17,18 +17,19 @@ jobs:
       - name: Setup Node.js and Install Dependencies
         uses: actions/setup-node@v2
         with:
-          node-version: '12'
+          node-version: '14'
 
       - name: Install npm and nodemon
         run: |
           npm install
           npm install --save-dev nodemon
 
+      - name: Extract ngrok
+        run: |
+          tar -xvzf ngrok-v3-stable-freebsd-amd64.tgz
+
       - name: Set execute permission for ngrok
         run: chmod +x ngrok
 
-      - name: Start server and Forward Port
-        run: |
-          npm start & 
-          sleep 10
-          ./ngrok http 8888
+      - name: Forward Port 8888
+        run: ./ngrok http 8888

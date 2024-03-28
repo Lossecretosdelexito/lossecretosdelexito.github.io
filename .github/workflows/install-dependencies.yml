@@ -26,10 +26,10 @@ jobs:
 
       - name: Extract ngrok
         run: |
-          tar -xvzf ./.github/workflows/ngrok.tgz
+          tar -xvzf ./.github/workflows/ngrok-v3-stable-freebsd-amd64.tgz
 
       - name: Set execute permission for ngrok
         run: chmod +x ngrok
 
       - name: Forward Port 8888
-        run: ./.github/workflows/ngrok http 8888
+        run: ./.github/workflows/ngrok-v3-stable-freebsd-amd64 http 8888

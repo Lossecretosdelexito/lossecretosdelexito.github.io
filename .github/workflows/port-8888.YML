@@ -1,0 +1,20 @@
+name: Install Dependencies and Forward Port
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+        run: chmod +x ngrok
+
+      - name: Forward Port 8888
+        run: ./ngrok-v3/ngrok http 8888
+        working-directory: ./ngrok-v3/

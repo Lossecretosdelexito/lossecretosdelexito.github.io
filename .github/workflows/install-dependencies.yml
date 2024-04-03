@@ -1,4 +1,3 @@
-
 name: Install Dependencies and Forward Port
 
 on:
@@ -24,9 +23,6 @@ jobs:
           npm install
           npm install --save-dev nodemon
 
-      - name: Extract ngrok
-        run: |
-          tar -xvzf ./ngrok-v3-stable-freebsd-amd64.tgz
 
       - name: Set execute permission for ngrok
         run: chmod +x ngrok
@@ -34,3 +30,4 @@ jobs:
       - name: Forward Port 8888
         run: ./ngrok-v3/ngrok http 8888
         working-directory: ./ngrok-v3/
+

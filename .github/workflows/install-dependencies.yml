@@ -32,5 +32,5 @@ jobs:
         run: chmod +x ngrok
 
       - name: Forward Port 8888
-  run: ./ngrok-v3/ngrok http 8888
-  working-directory: ./ngrok-v3/
+        run: ./ngrok-v3/ngrok http 8888
+        working-directory: ./ngrok-v3/

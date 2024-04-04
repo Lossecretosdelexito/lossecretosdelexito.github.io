@@ -23,10 +23,12 @@ jobs:
           npm install
           npm install --save-dev nodemon
 
+      - name: Change directory to ngrok-v3
+        run: cd ngrok-v3
+
       - name: Set execute permission for ngrok
         run: |
           chmod +x ngrok
 
       - name: Forward Port 8888
-        run: ./ngrok-v3/ngrok http 8888
-        working-directory: ./ngrok-v3/
+        run: ./ngrok http 8888

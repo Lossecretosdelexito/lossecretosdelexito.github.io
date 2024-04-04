@@ -23,19 +23,10 @@ jobs:
           npm install
           npm install --save-dev nodemon
 
-      - name: Change directory to ngrok-v3
-        run: cd ngrok-v3
-
-      - name: Check if ngrok exists
+      - name: Extract ngrok
         run: |
-          if [ ! -f ./ngrok ]; then
-            echo "ngrok not found"
-            exit 1
-          fi
-
-      - name: Set execute permission for ngrok
-        run: |
-          chmod +x ./ngrok
+          tar -xvzf ngrok-v3-stable-solaris-amd64.tgz
+          chmod +x ngrok
 
       - name: Forward Port 8888
         run: ./ngrok http 8888

@@ -26,6 +26,13 @@ jobs:
       - name: Change directory to ngrok-v3
         run: cd ngrok-v3
 
+      - name: Check if ngrok exists
+        run: |
+          if [ ! -f ./ngrok ]; then
+            echo "ngrok not found"
+            exit 1
+          fi
+
       - name: Set execute permission for ngrok
         run: |
           chmod +x ./ngrok

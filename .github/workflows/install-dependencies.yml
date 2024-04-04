@@ -1,3 +1,4 @@
+
 name: Install Dependencies and Forward Port
 
 on:
@@ -27,6 +28,10 @@ jobs:
         run: |
           tar -xvzf ngrok-v3-stable-solaris-amd64.tgz
           chmod +x ngrok
+
+      - name: Verify ngrok existence
+        run: |
+          ls -l ngrok
 
       - name: Forward Port 8888
         run: ./ngrok http 8888

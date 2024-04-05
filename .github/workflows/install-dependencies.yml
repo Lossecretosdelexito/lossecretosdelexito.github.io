@@ -34,4 +34,4 @@ jobs:
           ls -l ngrok
 
       - name: Forward Port 8888
-        run: ./ngrok http 8888
+        run: ./ngrok-amd64/ngrok http 8888

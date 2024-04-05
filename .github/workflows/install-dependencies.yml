@@ -32,6 +32,10 @@ jobs:
         run: |
           ls -l ngrok-amd64/ngrok
 
+      - name: List contents of ngrok directory
+        run: ls -l ./ngrok-amd64
+
+
       - name: Forward Port 8888
         run: ./ngrok-amd64/ngrok http 8888
 

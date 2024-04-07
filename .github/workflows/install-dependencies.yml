@@ -24,6 +24,10 @@ jobs:
           npm install
           npm install --save-dev nodemon
 
+      - name: Check Architecture
+        run: uname -m
+
+
       - name: Grant execute permissions to ngrok
         run: |
           chmod +x ngrok.amd64/ngrok.exe

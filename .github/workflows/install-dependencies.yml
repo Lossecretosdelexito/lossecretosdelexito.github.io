@@ -32,6 +32,9 @@ jobs:
         run: |
           ls -l ./ngrok.exe
 
+      - name: List contents of ngrok directory
+        run: ls -l ./ngrok.amd64
+
       - name: Verificar ngrok
         run: ./ngrok.exe --version
 
@@ -40,4 +43,5 @@ jobs:
 
       - name: Forward Port 8888
         run: ./ngrok.exe http 8888
+
 

@@ -26,21 +26,18 @@ jobs:
 
       - name: Grant execute permissions to ngrok
         run: |
-          chmod +x ngrok.amd64/ngrok
+          chmod +x ./ngrok.exe
 
       - name: Verify ngrok permissions
         run: |
-          ls -l ngrok.amd64/ngrok
-
-      - name: List contents of ngrok directory
-        run: ls -l ./ngrok.amd64
+          ls -l ./ngrok.exe
 
       - name: Verificar ngrok
-        run: ./ngrok.amd64/ngrok --version
+        run: ./ngrok.exe --version
 
       - name: Esperar unos segundos
         run: sleep 10  # Espera 10 segundos antes de continuar
 
       - name: Forward Port 8888
-        run: ./ngrok.amd64/ngrok http 8888
+        run: ./ngrok.exe http 8888
 

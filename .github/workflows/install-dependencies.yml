@@ -35,6 +35,10 @@ jobs:
       - name: List contents of ngrok directory
         run: ls -l ./
 
+      - name: Verificar la existencia de ngrok.exe
+        run: ls -l ./ngrok.exe
+
+
       - name: Verificar ngrok
         run: ./ngrok.exe --version
 

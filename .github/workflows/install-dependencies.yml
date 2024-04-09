@@ -33,7 +33,7 @@ jobs:
           ls -l ./ngrok.exe
 
       - name: List contents of ngrok directory
-        run: ls -l ./ngrok.amd64
+        run: ls -l ./
 
       - name: Verificar ngrok
         run: ./ngrok.exe --version

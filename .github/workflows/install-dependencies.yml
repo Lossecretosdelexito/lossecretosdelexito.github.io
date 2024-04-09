@@ -24,28 +24,10 @@ jobs:
           npm install
           npm install --save-dev nodemon
 
-      - name: Grant execute permissions to ngrok
-        run: |
-          chmod +x ./ngrok.exe
-
-      - name: Verify ngrok permissions
-        run: |
-          ls -l ./ngrok.exe
-
-      - name: List contents of ngrok directory
-        run: ls -l ./
-
-      - name: Verificar la existencia de ngrok.exe
-        run: ls -l ./ngrok.exe
-
-
-      - name: Verificar ngrok
-        run: ./ngrok.exe --version
-
-      - name: Esperar unos segundos
-        run: sleep 10  # Espera 10 segundos antes de continuar
+      - name: Install ngrok
+        run: npm install -g ngrok
 
       - name: Forward Port 8888
-        run: ./ngrok.exe http 8888
+        run: ngrok http 8888
 
 

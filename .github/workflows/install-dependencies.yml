@@ -27,4 +27,4 @@ jobs:
         run: npm install -g ngrok
 
       - name: Forward Port 8888
-        run: ngrok http 8888 -- authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
+        run: ngrok http 8888 --authtoken ${{ secrets.NGROK_AUTH_TOKEN }}

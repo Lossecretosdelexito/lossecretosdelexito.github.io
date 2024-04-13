@@ -23,8 +23,17 @@ jobs:
           npm install
           npm install --save-dev nodemon
 
-      - name: Install ngrok
-        run: npm install -g ngrok
+      - name: Grant execute permissions to ngrok
+        run: |
+          chmod +x ngrok.amd64/ngrok
+
+      - name: Verify ngrok permissions
+        run: |
+          ls -l ngrok.amd64/ngrok
 
       - name: Forward Port 8888
-        run: ngrok http 8888 --authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
+        run: ./ngrok.amd64/ngrok http 8888 --authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
+
+
+
+

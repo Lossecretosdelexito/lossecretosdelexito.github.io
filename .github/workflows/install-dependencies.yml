@@ -23,6 +23,9 @@ jobs:
           npm install
           npm install --save-dev nodemon
 
+      - name: Print OS information
+        run: echo ${{ runner.os }}
+
       - name: Grant execute permissions to ngrok
         run: |
           chmod +x ./ngrok-v3/ngrok

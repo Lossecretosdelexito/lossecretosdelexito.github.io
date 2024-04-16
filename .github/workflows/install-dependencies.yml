@@ -28,14 +28,14 @@ jobs:
 
       - name: Grant execute permissions to ngrok
         run: |
-          chmod +x ./ngrok-v3/ngrok
+          chmod +x ./ngrok-v3/ngrok.exe
 
       - name: Verify ngrok permissions
         run: |
-          ls -l ./ngrok-v3/ngrok
+          ls -l ./ngrok-v3/ngrok.exe
 
       - name: Forward Port 8888
-        run: ./ngrok-v3/ngrok http 8888 --authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
+        run: ./ngrok-v3/ngrok.exe http 8888 --authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
 
 
 

@@ -27,7 +27,7 @@ jobs:
         run: echo ${{ runner.os }}
 
       - name: Grant execute permissions to ngrok
-  run: |
+        run: |
     if [ "${{ runner.os }}" == "Windows" ]; then
       chmod +x ./ngrok-v3/ngrok.exe
     else

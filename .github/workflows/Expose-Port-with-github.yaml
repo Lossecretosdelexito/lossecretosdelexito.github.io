@@ -1,0 +1,21 @@
+name: Expose Port with Ngrok
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  expose_port:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Ngrok
+        run: |
+          curl -O https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+          unzip ngrok-stable-linux-amd64.zip
+
+      - name: Start Ngrok Tunnel
+        run: ./ngrok http 8888

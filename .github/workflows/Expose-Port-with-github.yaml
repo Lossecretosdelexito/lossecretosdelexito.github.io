@@ -14,8 +14,8 @@ jobs:
 
       - name: Install Ngrok
         run: |
-          curl -O https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-          unzip ngrok-stable-linux-amd64.zip
+    curl -O https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+    unzip -n ngrok-stable-linux-amd64.zip
 
       - name: Start Ngrok Tunnel
         run: ./ngrok http 8888

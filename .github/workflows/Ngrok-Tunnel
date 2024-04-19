@@ -1,0 +1,26 @@
+name: CI
+on: push
+
+jobs:
+
+  deploy:
+    name: Ngrok tunnel
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    - name: Install Docker
+      run: sudo apt-get install docker.io -y
+    
+    - name: Start Docker container
+      run: docker run -d -p 8888:8888 your_docker_image_name
+    
+    - name: Ngrok tunnel
+      uses: luisboto/ngrok-tunnel-action@<VERSION>
+      with:
+        timeout: 1h
+        port: 8888
+        ngrok_authtoken: ${{ secrets.NGROK_AUTHTOKEN }}
+        tunnel_type: http

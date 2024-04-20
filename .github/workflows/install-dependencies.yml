@@ -23,6 +23,10 @@ jobs:
           npm install
           npm install --save-dev nodemon
 
+      - name: Grant execute permissions to ngrok
+        run: |
+          chmod +x ./ngrok-v3/ngrok
+
       - name: Verify ngrok permissions
         run: |
           ls -l ./ngrok-v3/ngrok

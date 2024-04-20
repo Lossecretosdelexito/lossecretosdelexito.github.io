@@ -26,15 +26,14 @@ jobs:
       - name: Grant execute permissions to ngrok
         run: |
           if [ "${{ runner.os }}" == "Windows" ]; then
-            chmod +x ./ngrok-v3/ngrok-stable-linux-arm.zip
+            unzip ./ngrok-v3/ngrok-stable-linux-arm.zip -d ./ngrok-v3
           else
-            chmod +x ./ngrok-v3/ngrok-stable-linux-arm.zip
+            unzip ./ngrok-v3/ngrok-stable-linux-arm.zip -d ./ngrok-v3
           fi
-
 
       - name: Verify ngrok permissions
         run: |
-          ls -l ./ngrok-v3/ngrok-stable-linux-arm.zip
+          ls -l ./ngrok-v3/ngrok
 
       - name: Forward Port 8888
-        run: ./ngrok-v3/ngrok-stable-linux-arm.zip http 8888 --authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
+        run: ./ngrok-v3/ngrok http 8888 --authtoken ${{ secrets.NGROK_AUTH_TOKEN }}

@@ -37,4 +37,4 @@ jobs:
           ls -l ./ngrok-v3/ngrok-stable-linux-arm.zip
 
       - name: Forward Port 8888
-        run: ./ngrok-v3/ngrokngrok-stable-linux-arm.zip http 8888 --authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
+        run: ./ngrok-v3/ngrok-stable-linux-arm.zip http 8888 --authtoken ${{ secrets.NGROK_AUTH_TOKEN }}

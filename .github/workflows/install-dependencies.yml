@@ -25,9 +25,7 @@ jobs:
 
       - name: Grant execute permissions to ngrok
         run: |
-          if [ "${{ runner.os }}" == "Windows" ]; then
-            unzip -q ./ngrok-v3/ngrok-stable-linux-arm.zip -d ./ngrok-v3
-          else
+          if [ "${{ runner.os }}" == "Linux" ]; then
             unzip -q ./ngrok-v3/ngrok-stable-linux-arm.zip -d ./ngrok-v3
           fi
 

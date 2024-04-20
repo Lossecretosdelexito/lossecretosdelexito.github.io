@@ -13,6 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Forward Port 8888
         run: chmod +x ngrok
 
       - name: Forward Port 8888

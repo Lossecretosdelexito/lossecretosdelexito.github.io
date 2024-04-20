@@ -1,13 +1,13 @@
-name: CI
-on: push
+      name: CI
+      on: push
 
-jobs:
+      jobs:
 
-  deploy:
-    name: Ngrok tunnel
-    runs-on: ubuntu-latest
+      deploy:
+      name: Ngrok tunnel
+      runs-on: ubuntu-latest
 
-    steps:
+      steps:
     - name: Checkout
       uses: actions/checkout@v2
     

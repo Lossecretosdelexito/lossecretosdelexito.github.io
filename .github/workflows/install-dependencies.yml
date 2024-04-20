@@ -23,18 +23,6 @@ jobs:
           npm install
           npm install --save-dev nodemon
 
-      - name: Grant execute permissions to ngrok
-        run: |
-          if [ "${{ runner.os }}" == "Linux" ]; then
-            unzip -q ./ngrok-v3/ngrok-stable-linux-arm.zip -d ./ngrok-v3
-          fi
-
-      - name: Extract ngrok
-        run: |
-          if [ "${{ runner.os }}" == "Linux" ]; then
-            unzip -q ./ngrok-v3/ngrok-stable-linux-arm.zip -d ./ngrok-v3
-          fi
-
       - name: Verify ngrok permissions
         run: |
           ls -l ./ngrok-v3/ngrok

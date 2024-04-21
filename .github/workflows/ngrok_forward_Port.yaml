@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Paso para verificar y descargar el repositorio
+      # Paso para verificar y  descargar el repositorio
       - name: Checkout Repository
         uses: actions/checkout@v2
 

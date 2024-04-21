@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Paso para verificar y  descargar el repositorio
+      # Paso para verificar y descargar el repositorio
       - name: Checkout Repository
         uses: actions/checkout@v2
 
       # Paso para ejecutar ngrok y reenviar el puerto 8888
       - name: Forward Port 8888 with ngrok
         run: ./ngrok_forward.sh
-        description: Ejecuta ngrok para reenviar el puerto 8888
+        

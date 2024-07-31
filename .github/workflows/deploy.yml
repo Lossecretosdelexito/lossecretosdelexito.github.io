@@ -1,0 +1,35 @@
+name: Deploy Site
+
+on:
+  push:
+    branches:
+      - main  # Cambia 'main' a la rama que uses para tu despliegue
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Checkout Private Repository
+      uses: actions/checkout@v2
+      with:
+        repository: tu-usuario/tu-repo-privado
+        token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+        path: private-repo
+
+    - name: Copy Data from Private Repo
+      run: cp -r private-repo/data ./data
+
+    - name: Deploy to GitHub Pages
+      run: |
+        # Aquí puedes usar cualquier comando de construcción si necesitas procesar los datos
+        # Si solo necesitas HTML, puedes omitir Jekyll o cualquier otro generador
+        cp -r ./data/* ./  # Copia los datos al directorio principal
+        git config --global user.name 'GitHub Action'
+        git config --global user.email 'action@github.com'
+        git add .
+        git commit -m "Deploy site"
+        git push origin gh-pages  # Cambia 'gh-pages' a la rama que uses para GitHub Pages
